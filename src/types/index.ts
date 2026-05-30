@@ -33,11 +33,11 @@ export interface BookingItem {
   customerName: string;
   email: string;
   phone: string;
+  businessName: string;
   service: string;
   budget: string;
-  preferredDate: string;
+  preferredDeadline: string;
   projectDescription: string;
-  fileUrl?: string;
   status: 'pending' | 'confirmed' | 'in-progress' | 'completed' | 'cancelled';
   createdAt: string;
 }

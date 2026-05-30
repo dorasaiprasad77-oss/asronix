@@ -9,8 +9,10 @@ interface BookingDetails {
   customerName: string;
   email: string;
   phone: string;
+  businessName: string;
   service: string;
   budget: string;
+  preferredDeadline: string;
   projectDescription: string;
 }
 

@@ -13,14 +13,14 @@ router.post('/', async (req: AuthRequest, res: Response) => {
       customerName,
       email,
       phone,
+      businessName,
       service,
       budget,
-      preferredDate,
+      preferredDeadline,
       projectDescription,
-      fileUrl,
     } = req.body;
 
-    if (!customerName || !email || !phone || !service || !budget || !preferredDate || !projectDescription) {
+    if (!customerName || !email || !phone || !businessName || !service || !budget || !preferredDeadline || !projectDescription) {
       return res.status(400).json({ error: 'All required fields must be filled' });
     }
 
@@ -28,20 +28,21 @@ router.post('/', async (req: AuthRequest, res: Response) => {
       customerName,
       email,
       phone,
+      businessName,
       service,
       budget,
-      preferredDate,
+      preferredDeadline,
       projectDescription,
-      fileUrl,
     });
 
     const bookingDetails = {
       customerName,
       email,
       phone,
+      businessName,
       service,
       budget,
-      preferredDate,
+      preferredDeadline,
       projectDescription,
     };
 

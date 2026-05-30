@@ -14,9 +14,10 @@ interface BookingDetails {
   customerName: string;
   email: string;
   phone: string;
+  businessName: string;
   service: string;
   budget: string;
-  preferredDate: string;
+  preferredDeadline: string;
   projectDescription: string;
 }
 
@@ -57,8 +58,12 @@ export async function sendAdminNotification(booking: BookingDetails) {
               <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #1a1a2e; font-size: 14px; font-weight: 600; text-align: right;">${booking.budget}</td>
             </tr>
             <tr>
-              <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #8899aa; font-size: 14px;">Preferred Date</td>
-              <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #1a1a2e; font-size: 14px; font-weight: 600; text-align: right;">${booking.preferredDate}</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #8899aa; font-size: 14px;">Business Name</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #1a1a2e; font-size: 14px; font-weight: 600; text-align: right;">${booking.businessName}</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #8899aa; font-size: 14px;">Preferred Deadline</td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #f0f0f0; color: #1a1a2e; font-size: 14px; font-weight: 600; text-align: right;">${booking.preferredDeadline}</td>
             </tr>
           </table>
 
@@ -111,8 +116,8 @@ export async function sendCustomerConfirmation(booking: BookingDetails) {
                 <td style="padding: 8px 0; border-top: 1px solid #f0f0f0; color: #1a1a2e; font-size: 14px; font-weight: 600; text-align: right;">${booking.budget}</td>
               </tr>
               <tr>
-                <td style="padding: 8px 0; border-top: 1px solid #f0f0f0; color: #8899aa; font-size: 14px;">Preferred Date</td>
-                <td style="padding: 8px 0; border-top: 1px solid #f0f0f0; color: #1a1a2e; font-size: 14px; font-weight: 600; text-align: right;">${booking.preferredDate}</td>
+                <td style="padding: 8px 0; border-top: 1px solid #f0f0f0; color: #8899aa; font-size: 14px;">Preferred Deadline</td>
+                <td style="padding: 8px 0; border-top: 1px solid #f0f0f0; color: #1a1a2e; font-size: 14px; font-weight: 600; text-align: right;">${booking.preferredDeadline}</td>
               </tr>
             </table>
           </div>

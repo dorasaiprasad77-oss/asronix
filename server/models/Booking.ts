@@ -4,11 +4,11 @@ export interface IBooking extends Document {
   customerName: string;
   email: string;
   phone: string;
+  businessName: string;
   service: string;
   budget: string;
-  preferredDate: string;
+  preferredDeadline: string;
   projectDescription: string;
-  fileUrl?: string;
   status: 'pending' | 'confirmed' | 'in-progress' | 'completed' | 'cancelled';
   createdAt: Date;
   updatedAt: Date;
@@ -19,11 +19,11 @@ const BookingSchema = new Schema<IBooking>(
     customerName: { type: String, required: true },
     email: { type: String, required: true },
     phone: { type: String, required: true },
+    businessName: { type: String, required: true },
     service: { type: String, required: true },
     budget: { type: String, required: true },
-    preferredDate: { type: String, required: true },
+    preferredDeadline: { type: String, required: true },
     projectDescription: { type: String, required: true },
-    fileUrl: { type: String },
     status: {
       type: String,
       enum: ['pending', 'confirmed', 'in-progress', 'completed', 'cancelled'],

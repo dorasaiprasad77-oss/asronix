@@ -283,8 +283,12 @@ export default function AdminBookings() {
                   <p className="font-medium text-[#0a0a1a]">{selectedBooking.budget}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 mb-1">Preferred Date</p>
-                  <p className="font-medium text-[#0a0a1a]">{selectedBooking.preferredDate}</p>
+                  <p className="text-xs text-gray-400 mb-1">Business Name</p>
+                  <p className="font-medium text-[#0a0a1a]">{selectedBooking.businessName}</p>
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 mb-1">Preferred Deadline</p>
+                  <p className="font-medium text-[#0a0a1a]">{selectedBooking.preferredDeadline}</p>
                 </div>
               </div>
 

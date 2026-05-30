@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 
 const COMPANY_WHATSAPP = '917377532141';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 const services = [
   'Web Development',
@@ -143,12 +144,26 @@ export default function BookingForm() {
     return encodeURIComponent(message);
   };
 
+  const saveBookingToDB = async () => {
+    try {
+      await fetch(`${API_BASE}/api/bookings`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+    } catch (error) {
+      console.error('Failed to save booking to database:', error);
+    }
+  };
+
   const handleWhatsAppClick = () => {
     if (!validateForm()) return;
     setSending(true);
     const message = buildWhatsAppMessage();
     setTimeout(() => {
       window.open(`https://wa.me/${COMPANY_WHATSAPP}?text=${message}`, '_blank');
+      // Save to MongoDB in the background (don't block the UI)
+      saveBookingToDB();
       setSending(false);
       setSent(true);
     }, 400);
