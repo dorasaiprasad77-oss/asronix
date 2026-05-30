@@ -60,9 +60,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <div className="max-w-[1440px] mx-auto shadow-xl">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
