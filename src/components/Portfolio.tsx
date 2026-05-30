@@ -7,6 +7,63 @@ import type { ProjectItem } from '@/types';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
+const demoProjects: Omit<ProjectItem, '_id'>[] = [
+  {
+    projectName: 'CRM System',
+    description: 'A comprehensive Customer Relationship Management platform with lead tracking, pipeline management, automated follow-ups, analytics dashboard, and team collaboration tools. Built for sales teams to manage customer interactions efficiently.',
+    clientIndustry: 'Sales & Business',
+    technologies: ['React', 'Node.js', 'MongoDB', 'AI Chatbots', 'Analytics'],
+    images: [],
+    projectUrl: '',
+    createdAt: new Date().toISOString(),
+  },
+  {
+    projectName: 'Online Meeting App',
+    description: 'A feature-rich video conferencing application with real-time screen sharing, virtual whiteboards, breakout rooms, recording capabilities, and AI-powered meeting summaries. Supports up to 200 participants with low latency.',
+    clientIndustry: 'Communication',
+    technologies: ['WebRTC', 'Socket.io', 'Next.js', 'AI Transcription', 'Cloud'],
+    images: [],
+    projectUrl: '',
+    createdAt: new Date().toISOString(),
+  },
+  {
+    projectName: 'Inventory Management System',
+    description: 'An intelligent inventory tracking system with real-time stock updates, barcode scanning, automated reorder alerts, supplier management, and predictive analytics for demand forecasting.',
+    clientIndustry: 'Retail & Logistics',
+    technologies: ['React', 'PostgreSQL', 'Python', 'AI Predictions', 'REST API'],
+    images: [],
+    projectUrl: '',
+    createdAt: new Date().toISOString(),
+  },
+  {
+    projectName: 'E-Commerce Platform',
+    description: 'A modern e-commerce solution with AI-powered product recommendations, secure payment gateway integration, inventory sync, order tracking, and a responsive mobile-first shopping experience.',
+    clientIndustry: 'E-Commerce',
+    technologies: ['Next.js', 'Stripe', 'AI Engine', 'Tailwind CSS', 'Redis'],
+    images: [],
+    projectUrl: '',
+    createdAt: new Date().toISOString(),
+  },
+  {
+    projectName: 'HR Management Portal',
+    description: 'An all-in-one HR management system featuring employee onboarding, attendance tracking, leave management, performance reviews, payroll integration, and AI-driven hiring assistance.',
+    clientIndustry: 'Human Resources',
+    technologies: ['Angular', 'Node.js', 'MongoDB', 'AI Tools', 'Cloud'],
+    images: [],
+    projectUrl: '',
+    createdAt: new Date().toISOString(),
+  },
+  {
+    projectName: 'AI Chatbot Assistant',
+    description: 'An intelligent conversational AI chatbot for customer support with natural language understanding, multi-language support, sentiment analysis, and seamless handoff to human agents.',
+    clientIndustry: 'Customer Support',
+    technologies: ['Python', 'LLM', 'React', 'WebSocket', 'NLP'],
+    images: [],
+    projectUrl: '',
+    createdAt: new Date().toISOString(),
+  },
+];
+
 export default function Portfolio() {
   const [projects, setProjects] = useState<ProjectItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -20,9 +77,16 @@ export default function Portfolio() {
     try {
       const res = await fetch(`${API_BASE}/api/projects`);
       const data = await res.json();
-      setProjects(data.projects || []);
+      if (data.projects && data.projects.length > 0) {
+        setProjects(data.projects);
+      } else {
+        // Fallback to demo projects when API returns empty
+        setProjects(demoProjects as ProjectItem[]);
+      }
     } catch (error) {
-      console.error('Failed to fetch projects:', error);
+      console.error('Failed to fetch projects, showing demo projects:', error);
+      // Fallback to demo projects when API fails
+      setProjects(demoProjects as ProjectItem[]);
     } finally {
       setLoading(false);
     }

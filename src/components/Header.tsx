@@ -36,9 +36,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-lg transition-transform duration-300 group-hover:scale-110">
-              A
-            </div>
+            <img
+              src="/logo.png"
+              alt="ASRONIX TECH AGENCY"
+              className="w-10 h-10 rounded-xl object-cover transition-transform duration-300 group-hover:scale-110"
+            />
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold font-[Poppins] text-[#0a0a1a] leading-tight">
                 ASRONIX
