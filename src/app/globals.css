@@ -562,7 +562,8 @@ body {
 
 .asronix-contact-col p {
     margin-bottom: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
+    color: #ffffff;
 }
 
 .asronix-social-icons a {
@@ -574,9 +575,10 @@ body {
 .asronix-copyright {
     text-align: center;
     padding-top: 40px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     border-top: 1px solid #2C534E;
     margin-top: 40px;
+    color: #ffffff;
 }
 
 /* Services header text white */

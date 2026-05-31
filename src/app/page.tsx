@@ -429,11 +429,23 @@ export default function HomePage() {
             </div>
             <div className="asronix-contact-col">
               <h4>Office &amp; Support</h4>
-              <p>📍 Berhampur ,odisha ,india kardo</p>
+              <p>📍 Berhampur, Odisha, India</p>
               <p>📞 Freecall: +91 73775 32141</p>
               <p>⏱️ 24/7 dedicated support &amp; consultation</p>
               <p><i className="fas fa-headset"></i> Emergency line always open</p>
             </div>
+          </div>
+          <div style={{ margin: '40px auto', maxWidth: '800px', borderRadius: '24px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239201.32253363096!2d84.64724497421874!3d19.31527098642384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1b2e8c0f5c5a27%3A0x5e6c8d7f3a2b1c0d!2sBrahmapur%2C%20Odisha!5e0!3m2!1sen!2sin!4v1"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="ASRONIX TECH AGENCY - Berhampur, Odisha"
+            />
           </div>
           <div className="asronix-copyright">
             <p>&copy; 2026 ASRONIX TECH AGENCY — AI, Web &amp; Creative Solutions. All rights reserved. | Digital Innovation Architects</p>
