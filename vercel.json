@@ -1,8 +1,14 @@
 {
   "redirects": [
     {
-      "source": "https://www.asronixtech.com/:path*",
-      "destination": "https://asronixtech.com/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.asronixtech.com"
+        }
+      ],
+      "destination": "https://asronixtech.com/$1",
       "permanent": true
     }
   ]
