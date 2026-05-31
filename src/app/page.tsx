@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import LoadingScreen from '@/components/LoadingScreen';
 
 const COMPANY_WHATSAPP = '917377532141';
 
@@ -15,6 +16,7 @@ const budgetRanges = [
 ];
 
 export default function HomePage() {
+  const [splashLoading, setSplashLoading] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     customerName: '', phone: '', email: '', businessName: '',
@@ -164,13 +166,21 @@ export default function HomePage() {
     return errors[name] && touched[name] ? 'asronix-form-select asronix-field-error' : 'asronix-form-select';
   };
 
+  useEffect(() => {
+    const timer = setTimeout(() => setSplashLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
+      <LoadingScreen isLoading={splashLoading} message="Welcome to ASRONIX" />
+
       {/* Navigation */}
       <nav className="asronix-navbar">
         <div className="asronix-container asronix-nav-flex">
           <div className="asronix-logo">
             <img src="/logo.png" alt="ASRONIX TECH AGENCY" className="asronix-logo-img" />
+            <span className="asronix-logo-text">ASRONIX TECH AGENCY</span>
           </div>
           <button className={`asronix-hamburger ${menuOpen ? 'asronix-hamburger-open' : ''}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
             <span></span><span></span><span></span>

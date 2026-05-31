@@ -104,10 +104,24 @@ body {
     flex-wrap: wrap;
 }
 
+.asronix-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .asronix-logo-img {
     height: 48px;
     width: auto;
     display: block;
+}
+
+.asronix-logo-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0F3B3A;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .asronix-nav-links {
