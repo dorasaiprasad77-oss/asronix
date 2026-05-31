@@ -215,7 +215,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="asronix-hero-right">
-            <div className="asronix-info-row"><i className="fas fa-map-marker-alt"></i><div><strong>Address:</strong> Berhampur ,odisha ,india</div></div>
+            <div className="asronix-info-row"><i className="fas fa-map-marker-alt"></i><div><strong>Address:</strong> Berhampur, Odisha, India</div></div>
             <div className="asronix-info-row"><i className="fas fa-phone-alt"></i><div><strong>Freecall:</strong> +91 73775 32141 &nbsp;|&nbsp; <strong>WhatsApp:</strong> +91 7377532141</div></div>
             <div className="asronix-info-row"><i className="fas fa-envelope"></i><div><strong>Email:</strong> asronixtechagency@gmail.com</div></div>
             <div className="asronix-info-row"><i className="fab fa-instagram"></i><div><strong>Instagram:</strong> @asronixtechagency</div></div>
