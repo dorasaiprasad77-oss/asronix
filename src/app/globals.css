@@ -122,6 +122,11 @@ body {
     color: #0F3B3A;
     letter-spacing: 0.5px;
     white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.asronix-logo:hover .asronix-logo-text {
+    color: #D4AF37;
 }
 
 .asronix-nav-links {
