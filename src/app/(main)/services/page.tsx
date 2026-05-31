@@ -7,7 +7,7 @@ import {
   Code, Zap, Shield, Layers
 } from 'lucide-react';
 import Link from 'next/link';
-import LaptopIllustration from '@/components/LaptopIllustration';
+import ConvixHero from '@/components/ConvixHero';
 
 const services = [
   { icon: Globe, name: 'Web Development',
@@ -43,7 +43,10 @@ const floatingIcons = [Code, Zap, Shield, Layers];
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen pt-28 pb-20 relative overflow-hidden">
+    <main className="min-h-screen pb-20 relative overflow-hidden">
+      {/* Convix Software Hero */}
+      <ConvixHero />
+
       {/* Background gradients */}
       <div className="absolute top-40 -left-32 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-60 -right-32 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl pointer-events-none" />
@@ -73,61 +76,23 @@ export default function ServicesPage() {
         </motion.div>
       ))}
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero-style header with laptop illustration */}
-        <div className="lg:min-h-[420px] flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-16 lg:mb-20">
-          {/* Left: Text content */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="flex-1 text-center lg:text-left"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        {/* Section header */}
+        <div className="text-center mb-16">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold tracking-wide mb-6"
           >
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold tracking-wide mb-6"
-            >
-              <Sparkles size={14} />
-              Our Services
-            </motion.span>
-            
-            <h1 className="text-[clamp(36px,6vw,64px)] font-bold font-[Poppins] text-[#0a0a1a] leading-[1.1] mb-6">
-              Comprehensive{' '}
-              <span className="gradient-text inline-block">Digital Solutions</span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-gray-500 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
-              From web development to AI automation, we offer end-to-end digital services to accelerate your business growth and transform your vision into reality.
-            </p>
-
-            {/* Stats row */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 md:gap-12">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold font-[Poppins] gradient-text">9+</div>
-                <div className="text-sm text-gray-400 mt-1">Service Categories</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold font-[Poppins] gradient-text">50+</div>
-                <div className="text-sm text-gray-400 mt-1">Projects Delivered</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold font-[Poppins] gradient-text">98%</div>
-                <div className="text-sm text-gray-400 mt-1">Client Satisfaction</div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right: Laptop illustration */}
-          <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="flex-1 w-full max-w-lg lg:max-w-none"
-          >
-            <LaptopIllustration className="w-full h-auto" />
-          </motion.div>
+            <Sparkles size={14} />
+            Our Services
+          </motion.span>
+          <h2 className="text-3xl sm:text-4xl font-bold font-[Poppins] text-[#0a0a1a] mb-4">
+            Comprehensive <span className="gradient-text">Digital Solutions</span>
+          </h2>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            From web development to AI automation, we offer end-to-end digital services to accelerate your business growth.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

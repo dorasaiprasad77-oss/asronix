@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ASRONIX TECH AGENCY | AI, Web & Branding Solutions</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1F2937;
+            scroll-behavior: smooth;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: #0F3B3A;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: white;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 14px rgba(15, 59, 58, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1C5C5A;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #0F3B3A;
+            padding: 10px 28px;
+            font-weight: 600;
+            color: #0F3B3A;
+            border-radius: 40px;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: #0F3B3A;
+            color: white;
+        }
+
+        /* navbar (Consultax style but rebranded) */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+            padding: 18px 0;
+            border-bottom: 1px solid #EDF2F7;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0F3B3A;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #5B6E6C;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        /* CHANGE: Navigation menu links color changed to BLUE (#2563EB) as requested */
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2563EB;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #1D4ED8;
+            font-weight: 600;
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            /* ADDED: Background image as requested - modern tech abstract gradient + subtle pattern */
+            background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 70px 0 80px;
+        }
+        
+        /* Overlay to ensure text readability over the background image */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 59, 58, 0.85) 0%, rgba(2, 35, 45, 0.88) 100%);
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-left .badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #FFE7A3;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,215,0,0.4);
+        }
+
+        .hero-left h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero-left h1 span {
+            color: #F7D44A;
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        .hero-left p {
+            font-size: 1rem;
+            color: #F0F6F3;
+            margin-bottom: 32px;
+            line-height: 1.5;
+            max-width: 90%;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 14px 20px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,240,0.5);
+            min-width: 140px;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            background: white;
+        }
+        .stat-card i {
+            font-size: 1.7rem;
+            color: #0F3B3A;
+            margin-bottom: 8px;
+        }
+        .stat-card h4 {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #1F2D2C;
+        }
+        .stat-card p {
+            font-size: 0.75rem;
+            color: #4B6A64;
+            text-shadow: none;
+        }
+
+        .hero-right {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(3px);
+            border-radius: 32px;
+            padding: 32px;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .info-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            align-items: center;
+            border-bottom: 1px solid #E5EBE8;
+            padding-bottom: 16px;
+        }
+        .info-row i {
+            font-size: 1.3rem;
+            color: #0F3B3A;
+            width: 32px;
+        }
+        .info-row strong {
+            font-weight: 700;
+            color: #0F2C2A;
+        }
+
+        /* section header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0F2C2A;
+        }
+        .section-header .accent-line {
+            width: 70px;
+            height: 3px;
+            background: #D4AF37;
+            margin: 14px auto 0;
+        }
+
+        /* SERVICES WE PROVIDE - huge grid */
+       .services-mega {
+    background-image: url('https://images.freecreatives.com/wp-content/uploads/2016/04/World-Wide-Web-Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+    position: relative;
+}
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 38px;
+        }
+        .service-category {
+            background: #FCFDFC;
+            border-radius: 28px;
+            padding: 28px 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #ECF3F0;
+            transition: all 0.2s;
+        }
+        .service-category:hover {
+            border-color: #C7DDD6;
+            box-shadow: 0 20px 28px -12px rgba(15,59,58,0.1);
+        }
+        .service-category h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0F3B3A;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid #D4AF37;
+            padding-left: 16px;
+        }
+        .service-list {
+            list-style: none;
+        }
+        .service-list li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: #2D4A45;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px dashed #E0EAE6;
+        }
+        .service-list li i {
+            color: #0F3B3A;
+            font-size: 0.8rem;
+            width: 24px;
+        }
+
+        /* Projects we build section */
+        .projects-showcase {
+    background-image: url('https://wallpapers.com/images/hd/tech-background-t29vt7psb6i6sgcy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+    position: relative;
+}
+
+.projects-showcase::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 249, 247, 0.40);
+    z-index: 1;
+}
+
+.projects-showcase .container {
+    position: relative;
+    z-index: 2;
+}
+        .projects-badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 24px;
+        }
+        .project-pill {
+            background: white;
+            padding: 8px 24px;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #0F3B3A;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #DBE7E3;
+        }
+        .project-pill i {
+            margin-right: 6px;
+            color: #D4AF37;
+        }
+
+        /* WHO WE ARE / Mission */
+        .mission-section {
+    background-image: url('https://slidechef.net/wp-content/uploads/2023/11/GEAR-BACKGROUND.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 70px 0;
+    position: relative;
+}
+
+.mission-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(200, 189, 189, 0.6);
+    z-index: 1;
+}
+
+.mission-section .container {
+    position: relative;
+    z-index: 2;
+}
+        .mission-flex {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .mission-left {
+            flex: 1;
+        }
+        .mission-left h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0F2C2A;
+            margin-bottom: 16px;
+        }
+        .mission-left .highlight {
+            color: #e7e5de;
+        }
+
+        #para{
+            color:black;;
+        }
+        #paraa{
+            color:black;;
+        }
+        .mission-left p {
+            color: #4A6A64;
+            line-height: 1.6;
+            margin: 20px 0 24px;
+        }
+        #service{
+            color:white;
+        }
+        .signature {
+            font-style: italic;
+            font-weight: 500;
+            border-top: 2px solid #E2E9E6;
+            padding-top: 24px;
+            margin-top: 16px;
+        }
+        .mission-right {
+            flex: 1;
+            background: #F8FBF9;
+            border-radius: 32px;
+            padding: 40px 32px;
+            border: 1px solid #E3EDE9;
+        }
+        .contact-detail-item {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+            align-items: center;
+        }
+        .contact-detail-item i {
+            font-size: 1.6rem;
+            color: #0F3B3A;
+            width: 42px;
+        }
+
+        /* Contact Information final block */
+        .contact-footer-block {
+            background: #0F2C2A;
+            color: #E2F0EC;
+            padding: 60px 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 48px;
+        }
+        .contact-col h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .contact-col p {
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .social-icons a {
+            color: #D4AF37;
+            margin-right: 20px;
+            font-size: 1.3rem;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            font-size: 0.8rem;
+            border-top: 1px solid #2C534E;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 880px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+            
+            .container {
+                padding: 0 24px;
+            }
+            .hero-left p {
+                max-width: 100%;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 550px) {
+            .nav-flex {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .stat-card {
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation: color of menu links changed to blue (#2563EB) as per request -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <h1>ASRONIX<span>TECH AGENCY</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#pages">PAGES</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#casestudy">CASESTUDY</a></li>
+            <li><a href="#shop">SHOP</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section: Added stunning background image (tech/abstract AI gradient) with overlay for readability -->
+<section class="hero" id="home">
+    <div class="container hero-grid">
+        <div class="hero-left">
+            <div class="badge">WE'RE ASRONIX</div>
+            <h1>Digital & AI Solutions For <span>Your Business Growth</span></h1>
+            <p>E SAI PRASAD DORA FOUNDERAND CEO modern digital solutions for startups, businesses, creators, and brands. From AI automation to stunning web platforms — we build what matters.</p>
+            <button class="btn-primary">EXPLORE <i class="fas fa-arrow-right"></i></button>
+            <div class="hero-stats">
+                <div class="stat-card"><i class="fas fa-crown"></i><h4>Quality Services</h4><p>Premium delivery</p></div>
+                <div class="stat-card"><i class="fas fa-lightbulb"></i><h4>Valuable Ideas</h4><p>Innovation first</p></div>
+                <div class="stat-card"><i class="fas fa-wallet"></i><h4>Budget Friendly</h4><p>Cost efficient</p></div>
+                <div class="stat-card"><i class="fas fa-headset"></i><h4>Support 24/7</h4><p>Always online</p></div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="info-row"><i class="fas fa-map-marker-alt"></i><div><strong>Address:</strong>Berhampur ,odisha ,india</div></div>
+            <div class="info-row"><i class="fas fa-phone-alt"></i><div><strong>Freecall:</strong> +91 73775 32141  &nbsp;|&nbsp; <strong>WhatsApp:</strong> +91 7377532141</div></div>
+            <div class="info-row"><i class="fas fa-envelope"></i><div><strong>Email:</strong> asronixtechagency@gmail.com</div></div>
+            <div class="info-row"><i class="fab fa-instagram"></i><div><strong>Instagram:</strong> @asronixtechagency</div></div>
+            <div class="info-row"><i class="fas fa-quote-right"></i><div><strong>Tagline:</strong> Ideas. Innovation. Impact.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES WE PROVIDE section - complete mega list -->
+<section class="services-mega" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="service">SERVICES WE PROVIDE</h2>
+            <div class="accent-line"></div>
+            <p style="margin-top: 12px; color:#54746D;">Cutting-edge digital solutions tailored to elevate your brand</p>
+        </div>
+        <div class="services-grid">
+            <!-- Web Development -->
+            <div class="service-category"><h3><i class="fas fa-code"></i> Web Development</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Business Websites</li><li><i class="fas fa-check-circle"></i> Portfolio Websites</li><li><i class="fas fa-check-circle"></i> E-Commerce Websites</li><li><i class="fas fa-check-circle"></i> Landing Pages</li><li><i class="fas fa-check-circle"></i> Custom Web Applications</li><li><i class="fas fa-check-circle"></i> Website Redesign & Optimization</li></ul></div>
+            <!-- App Development -->
+            <div class="service-category"><h3><i class="fab fa-android"></i> App Development</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Android Applications</li><li><i class="fas fa-check-circle"></i> Cross-Platform Apps</li><li><i class="fas fa-check-circle"></i> Startup MVP Development</li><li><i class="fas fa-check-circle"></i> Custom Business Applications</li></ul></div>
+            <!-- AI Solutions -->
+            <div class="service-category"><h3><i class="fas fa-microchip"></i> AI Solutions</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> AI Tool Integration</li><li><i class="fas fa-check-circle"></i> AI Automation Systems</li><li><i class="fas fa-check-circle"></i> AI Chatbot Development</li><li><i class="fas fa-check-circle"></i> Prompt Engineering</li><li><i class="fas fa-check-circle"></i> AI-Based Business Solutions</li><li><i class="fas fa-check-circle"></i> AI Content Generation</li></ul></div>
+            <!-- UI/UX Design -->
+            <div class="service-category"><h3><i class="fas fa-pen-ruler"></i> UI/UX Design</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Website UI/UX Design</li><li><i class="fas fa-check-circle"></i> Mobile App UI Design</li><li><i class="fas fa-check-circle"></i> Interactive Design Systems</li><li><i class="fas fa-check-circle"></i> Modern User Experiences</li></ul></div>
+            <!-- Graphic Design -->
+            <div class="service-category"><h3><i class="fas fa-palette"></i> Graphic Design</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Logo Design</li><li><i class="fas fa-check-circle"></i> Brand Identity Design</li><li><i class="fas fa-check-circle"></i> Social Media Creatives</li><li><i class="fas fa-check-circle"></i> Posters & Banners</li><li><i class="fas fa-check-circle"></i> Business Cards</li><li><i class="fas fa-check-circle"></i> Marketing Materials</li></ul></div>
+            <!-- Digital Branding -->
+            <div class="service-category"><h3><i class="fas fa-chalkboard-user"></i> Digital Branding</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Startup Branding</li><li><i class="fas fa-check-circle"></i> Personal Branding</li><li><i class="fas fa-check-circle"></i> Social Media Branding</li><li><i class="fas fa-check-circle"></i> LinkedIn Branding</li><li><i class="fas fa-check-circle"></i> Visual Identity Development</li></ul></div>
+            <!-- Marketing & Growth -->
+            <div class="service-category"><h3><i class="fas fa-chart-line"></i> Marketing & Growth</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> SEO Optimization</li><li><i class="fas fa-check-circle"></i> Social Media Management</li><li><i class="fas fa-check-circle"></i> Lead Generation Support</li><li><i class="fas fa-check-circle"></i> Content Strategy</li><li><i class="fas fa-check-circle"></i> Digital Marketing Solutions</li></ul></div>
+            <!-- Business Solutions -->
+            <div class="service-category"><h3><i class="fas fa-briefcase"></i> Business Solutions</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> Startup Launch Support</li><li><i class="fas fa-check-circle"></i> Business Automation</li><li><i class="fas fa-check-circle"></i> Tech Consultation</li><li><i class="fas fa-check-circle"></i> Digital Transformation</li></ul></div>
+            <!-- Creative Media -->
+            <div class="service-category"><h3><i class="fas fa-video"></i> Creative Media</h3><ul class="service-list"><li><i class="fas fa-check-circle"></i> AI Video Creation</li><li><i class="fas fa-check-circle"></i> Promotional Content</li><li><i class="fas fa-check-circle"></i> Motion Graphics</li><li><i class="fas fa-check-circle"></i> Advertising Creatives</li></ul></div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS WE BUILD (pill style) -->
+<section class="projects-showcase" id="casestudy">
+    <div class="container">
+        <div class="section-header">
+            <h2>PROJECTS WE BUILD</h2>
+            <div class="accent-line"></div>
+            <p>Delivering excellence across industries — real results, modern execution</p>
+        </div>
+        <div class="projects-badge-container">
+            <span class="project-pill"><i class="fas fa-globe"></i> Business Websites</span>
+            <span class="project-pill"><i class="fas fa-building"></i> Corporate Websites</span>
+            <span class="project-pill"><i class="fas fa-rocket"></i> Startup Websites</span>
+            <span class="project-pill"><i class="fas fa-user"></i> Portfolio Websites</span>
+            <span class="project-pill"><i class="fas fa-shopping-cart"></i> E-Commerce Stores</span>
+            <span class="project-pill"><i class="fas fa-cloud"></i> SaaS Platforms</span>
+            <span class="project-pill"><i class="fas fa-brain"></i> AI-Powered Applications</span>
+            <span class="project-pill"><i class="fas fa-laptop-code"></i> Custom Web Applications</span>
+            <span class="project-pill"><i class="fas fa-mobile-alt"></i> Mobile Applications</span>
+            <span class="project-pill"><i class="fas fa-file-alt"></i> Landing Pages</span>
+            <span class="project-pill"><i class="fas fa-calendar-check"></i> Booking Systems</span>
+            <span class="project-pill"><i class="fas fa-chalkboard"></i> Management Systems</span>
+            <span class="project-pill"><i class="fas fa-trademark"></i> Branding Projects</span>
+            <span class="project-pill"><i class="fas fa-paintbrush"></i> UI/UX Design Systems</span>
+            <span class="project-pill"><i class="fas fa-robot"></i> Automation Solutions</span>
+            <span class="project-pill"><i class="fas fa-comment-dots"></i> AI Chatbots</span>
+            <span class="project-pill"><i class="fas fa-chart-simple"></i> Business Dashboards</span>
+            <span class="project-pill"><i class="fas fa-chart-line"></i> Digital Marketing Assets</span>
+        </div>
+    </div>
+</section>
+
+<!-- WHO WE ARE / Mission Values + Founder -->
+<section class="mission-section" id="pages">
+    <div class="container mission-flex">
+        <div class="mission-left">
+            <h3 >Our Mission, <span class="highlight">Values and Motto</span></h3>
+            <p id="para">E SAI PRASAD DORA FOUNDERAND CEO, we believe technology should empower ambition. We fuse AI, creative design, and robust development to craft digital ecosystems that drive growth. Our mission is to democratize future-ready tools for startups, enterprises, and creators — making scalable, intelligent solutions accessible.</p>
+            <p id="paraa">We stand for radical transparency, continuous innovation, and human-centric design. Every line of code, every brand story, and every AI integration is built with purpose.</p>
+            <div class="signature">
+                <strong>E sai prasad dora — Founder & CEO</strong><br>
+                "Building scalable digital experiences through AI, modern development, creative branding, and innovative business solutions."
+            </div>
+        </div>
+        <div class="mission-right">
+            <div class="contact-detail-item"><i class="fas fa-quote-left"></i><div><strong>Our Motto</strong><br>Ideas. Innovation. Impact.</div></div>
+            <div class="contact-detail-item"><i class="fas fa-chart-line"></i><div><strong>Digital Excellence</strong><br>We transform complex challenges into seamless user journeys.</div></div>
+           
+            <div class="contact-detail-item"><i class="fas fa-globe"></i><div><strong>Global Mindset</strong><br>Based in Odisha | Clients worldwide.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT INFORMATION block -->
+<section class="contact-footer-block" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-col">
+                <h4><i class="fas fa-building"></i> ASRONIX TECH AGENCY</h4>
+                <p><i class="fas fa-phone-alt"></i> +91 7377532141</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 7377532141</p>
+                <p><i class="fas fa-envelope"></i> asronixtechagency@gmail.com</p>
+                <p><i class="fab fa-instagram"></i> @asronixtechagency</p>
+            </div>
+            <div class="contact-col">
+                <h4>Tagline & Vision</h4>
+                <p><strong>Ideas. Innovation. Impact.</strong></p>
+                <p>"Building scalable digital experiences through AI, modern development, creative branding, and innovative business solutions."</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contact-col">
+                <h4>Office & Support</h4>
+                <p>📍 Berhampur ,odisha ,india kardo</p>
+                <p>📞 Freecall: +91 73775 32141</p>
+                <p>⏱️ 24/7 dedicated support & consultation</p>
+                <p><i class="fas fa-headset"></i> Emergency line always open</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 ASRONIX TECH AGENCY — AI, Web & Creative Solutions. All rights reserved. | Digital Innovation Architects</p>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP & BLOG placeholder sections -->
+<section id="shop" style="padding: 80px 0; background: #F8FBF9;">
+    <div class="container" style="text-align: center;">
+        <h2 style="font-size: 2rem; font-weight: 800; color: #0F2C2A;">SHOP</h2>
+        <div class="accent-line" style="width: 70px; height: 3px; background: #D4AF37; margin: 14px auto 24px;"></div>
+        <p style="color: #4A6A64; font-size: 1.1rem;">Our digital products & merchandise coming soon. Stay tuned!</p>
+    </div>
+</section>
+
+<section id="blog" style="padding: 80px 0; background: #ffffff;">
+    <div class="container" style="text-align: center;">
+        <h2 style="font-size: 2rem; font-weight: 800; color: #0F2C2A;">BLOG</h2>
+        <div class="accent-line" style="width: 70px; height: 3px; background: #D4AF37; margin: 14px auto 24px;"></div>
+        <p style="color: #4A6A64; font-size: 1.1rem;">Insights on AI, web development, branding & digital growth. Articles launching soon!</p>
+    </div>
+</section>
+
+<script>
+    // smooth scroll for any anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+</body>
+</html>

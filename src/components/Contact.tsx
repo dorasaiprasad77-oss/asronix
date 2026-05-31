@@ -72,8 +72,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">            {/* Contact Info & Map */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -123,9 +122,32 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 mb-1">Location</p>
-                    <p className="text-sm text-white font-medium">India</p>
+                    <p className="text-sm text-white font-medium">Berhampur, Odisha, India</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="glass-card !bg-white/5 !border-white/10 rounded-2xl overflow-hidden">
+              <div className="p-4 pb-2">
+                <h3 className="text-lg font-semibold font-[Poppins] text-white flex items-center gap-2">
+                  <MapPin size={18} className="text-orange-400" />
+                  Our Location — Berhampur, Odisha
+                </h3>
+              </div>
+              <div className="w-full h-[220px]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239201.32253363096!2d84.64724497421874!3d19.31527098642384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1b2e8c0f5c5a27%3A0x5e6c8d7f3a2b1c0d!2sBrahmapur%2C%20Odisha!5e0!3m2!1sen!2sin!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-b-2xl"
+                  title="ASRONIX TECH AGENCY - Berhampur, Odisha"
+                />
               </div>
             </div>
 

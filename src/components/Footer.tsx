@@ -141,7 +141,7 @@ export default function Footer() {
               <li>
                 <span className="text-gray-400 text-sm flex items-center gap-3">
                   <MapPin size={14} className="text-blue-400 shrink-0" />
-                  India
+                  Berhampur, Odisha, India
                 </span>
               </li>
             </ul>

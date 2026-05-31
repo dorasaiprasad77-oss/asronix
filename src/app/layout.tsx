@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "ASRONIX TECH AGENCY | AI-Powered Digital Experiences",
+  title: "ASRONIX TECH AGENCY | AI, Web & Branding Solutions",
   description: "From strategy to execution, we craft innovative digital solutions that transform ideas into measurable business impact. Web Development, AI Solutions, App Development & more.",
   keywords: "digital agency, web development, AI solutions, app development, branding, marketing, UI/UX design, ASRONIX",
   openGraph: {
@@ -20,6 +18,11 @@ export const metadata: Metadata = {
     description: "Building AI-Powered Digital Experiences For Modern Businesses",
   },
   robots: "index, follow",
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
+  manifest: '/manifest.json',
 };
 
 const jsonLd = {
@@ -52,19 +55,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="min-h-screen bg-white antialiased">
-        <div className="max-w-[1440px] mx-auto shadow-xl">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );
