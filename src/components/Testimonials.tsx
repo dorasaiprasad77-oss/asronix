@@ -6,7 +6,6 @@ import { Star, Quote, MessageSquare } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import AnimatedSection from "./AnimatedSection";
 import Button from "./Button";
-import { testimonials as seedTestimonials } from "@/lib/data";
 
 interface Feedback {
   id: string;
@@ -40,15 +39,6 @@ export default function Testimonials() {
         const data = await res.json();
         if (data.length > 0) {
           setFeedbacks(data);
-        } else {
-          // Fall back to seed testimonials when no approved feedbacks yet
-          setFeedbacks(seedTestimonials.map((t) => ({
-            ...t,
-            id: String(t.id),
-            email: "",
-            approved: true,
-            createdAt: new Date().toISOString(),
-          })));
         }
       } else {
         setFeedbacks([]);

@@ -5,8 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Star, MessageSquare, ChevronLeft, ChevronRight, Send, X, CheckCircle, Quote } from 'lucide-react';
 import type { ReviewItem } from '@/types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-
 interface Feedback {
   id: string;
   name: string;
@@ -42,22 +40,6 @@ export default function Reviews() {
 
   const fetchReviews = async () => {
     try {
-      // First try the backend API (MongoDB)
-      const res = await fetch(`${API_BASE}/api/reviews`);
-      if (res.ok) {
-        const data = await res.json();
-        if (data.reviews && data.reviews.length > 0) {
-          setReviews(data.reviews);
-          setLoading(false);
-          return;
-        }
-      }
-    } catch {
-      // Backend unavailable, try local API
-    }
-
-    try {
-      // Fallback: try local /api/feedback (JSON file storage)
       const localRes = await fetch('/api/feedback');
       if (localRes.ok) {
         const data = await localRes.json();
@@ -68,10 +50,8 @@ export default function Reviews() {
         }
       }
     } catch {
-      // Local API unavailable
+      // API unavailable
     }
-
-    // No reviews exist yet — show empty state
     setLoading(false);
   };
 
@@ -266,7 +246,8 @@ export default function Reviews() {
                     className="input-field resize-none"
                     required
                   />
-                </div>                  {submitError && (
+                </div>
+                  {submitError && (
                     <motion.p
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}

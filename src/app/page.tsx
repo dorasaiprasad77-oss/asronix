@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import LoadingScreen from '@/components/LoadingScreen';
+import Reviews from '@/components/Reviews';
 
 const COMPANY_WHATSAPP = '917377532141';
 
@@ -190,8 +191,8 @@ export default function HomePage() {
             <li><a href="#pages" onClick={() => setMenuOpen(false)}>PAGES</a></li>
             <li><a href="#services" onClick={() => setMenuOpen(false)}>SERVICES</a></li>
             <li><a href="#casestudy" onClick={() => setMenuOpen(false)}>CASESTUDY</a></li>
-            <li><a href="#shop" onClick={() => setMenuOpen(false)}>SHOP</a></li>
-            <li><a href="#blog" onClick={() => setMenuOpen(false)}>BLOG</a></li>
+            <li><a href="#featured-work" onClick={() => setMenuOpen(false)}>OUR WORK</a></li>
+            <li><a href="#reviews" onClick={() => setMenuOpen(false)}>REVIEWS</a></li>
             <li><a href="#contact" className="asronix-nav-outline" onClick={() => setMenuOpen(false)}><i className="fas fa-phone-alt"></i> CONTACT</a></li>
             <li><a href="#booking" className="asronix-nav-cta" onClick={() => setMenuOpen(false)}><i className="fas fa-calendar-check"></i> BOOK NOW</a></li>
           </ul>
@@ -205,7 +206,7 @@ export default function HomePage() {
             <div className="asronix-badge">WE&apos;RE ASRONIX</div>
             <h1>Digital & AI Solutions For <span>Your Business Growth</span></h1>
             <p>E SAI PRASAD DORA FOUNDERAND CEO modern digital solutions for startups, businesses, creators, and brands. From AI automation to stunning web platforms — we build what matters.</p>
-            <button className="asronix-btn-primary">EXPLORE <i className="fas fa-arrow-right"></i></button>
+            <a href="#featured-work" className="asronix-btn-primary" style={{ textDecoration: 'none' }}>EXPLORE <i className="fas fa-arrow-right"></i></a>
             <a href="#booking" className="asronix-btn-secondary" style={{ marginLeft: 12 }}>BOOK NOW <i className="fas fa-calendar-check"></i></a>
             <div className="asronix-hero-stats">
               <div className="asronix-stat-card"><i className="fas fa-crown"></i><h4>Quality Services</h4><p>Premium delivery</p></div>
@@ -294,6 +295,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FEATURED WORK - Real Projects */}
+      <section className="asronix-services-mega" id="featured-work" style={{ padding: '70px 0', background: '#F8FBF9' }}>
+        <div className="asronix-container">
+          <div className="asronix-section-header">
+            <h2 style={{ color: '#0F2C2A' }}>FEATURED WORK</h2>
+            <div className="asronix-accent-line"></div>
+            <p style={{ marginTop: 12, color: '#54746D' }}>Real projects delivered — click to explore live</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 32 }}>
+            {[
+              { title: 'Stambhix AI Style', desc: 'AI-powered style platform with intelligent recommendations and modern UI. Built with cutting-edge web technologies for seamless user experience.', tech: ['React', 'AI Integration', 'Modern UI'], url: 'https://stambhix-ai-style.base44.app/', color: '#7C3AED' },
+              { title: 'VedAI Wisdom Flow', desc: 'Wisdom flow platform combining AI technology with ancient knowledge. Interactive experience designed for modern knowledge seekers.', tech: ['Next.js', 'AI', 'Interactive Design'], url: 'https://vedai-wisdom-flow.base44.app/', color: '#D97706' },
+            ].map((project) => (
+              <a key={project.title} href={project.url} target="_blank" rel="noopener noreferrer"
+                style={{
+                  background: 'white', borderRadius: 28, padding: '32px 28px',
+                  boxShadow: '0 8px 20px rgba(0,0,0,0.02)', border: '1px solid #ECF3F0',
+                  textDecoration: 'none', transition: 'all 0.2s', display: 'block',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#C7DDD6'; e.currentTarget.style.boxShadow = '0 20px 28px -12px rgba(15,59,58,0.1)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#ECF3F0'; e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.02)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <div style={{ width: 56, height: 56, borderRadius: 16, background: project.color, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </div>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#0F2C2A', marginBottom: 12 }}>{project.title}</h3>
+                <p style={{ color: '#4B6A64', lineHeight: 1.6, marginBottom: 20, fontSize: '0.9rem' }}>{project.desc}</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
+                  {project.tech.map(t => (
+                    <span key={t} style={{ padding: '4px 14px', borderRadius: 20, background: '#F0F5FF', color: '#2563EB', fontSize: '0.8rem', fontWeight: 500 }}>{t}</span>
+                  ))}
+                </div>
+                <span style={{ color: project.color, fontWeight: 600, fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+                  View Live Project <span style={{ fontSize: '1.1rem' }}>→</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WHO WE ARE / Mission */}
       <section className="asronix-mission-section" id="pages">
         <div className="asronix-container asronix-mission-flex">
@@ -313,6 +355,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* CLIENT REVIEWS / FEEDBACK */}
+      <Reviews />
 
       {/* ONLINE BOOKING / SEND PROJECT DETAILS ON WHATSAPP */}
       <section className="asronix-booking-section" id="booking">
