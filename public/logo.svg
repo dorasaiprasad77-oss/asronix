@@ -1,26 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380" width="300" height="380">
-  <!-- A Icon - Hollow/Outlined letter A -->
-  <path d="M 48,272 L 141,33 Q 150,22 159,33 L 252,272 L 222,272 L 171,105 L 129,105 L 78,272 Z" 
-        fill="#0B1D3A"/>
-  
-  <!-- Cyan dot at the top of the A -->
-  <circle cx="150" cy="18" r="11" fill="#29B6F6"/>
-  
-  <!-- "Asronix" text -->
-  <text x="150" y="320" 
-        text-anchor="middle" 
-        font-family="'Segoe UI', Arial, Helvetica, sans-serif" 
-        font-weight="700" 
-        font-size="54" 
-        fill="#0B1D3A" 
-        letter-spacing="-1">Asronix</text>
-  
-  <!-- "TECH AGENCY" subtitle -->
-  <text x="150" y="355" 
-        text-anchor="middle" 
-        font-family="'Segoe UI', Arial, Helvetica, sans-serif" 
-        font-weight="500" 
-        font-size="15" 
-        fill="#6B7280" 
-        letter-spacing="8">TECH AGENCY</text>
+<svg width="640" height="190" viewBox="0 0 640 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <title>Asronix Tech Agency</title>
+      <g transform="translate(16 12)">
+            <path d="M154 10C166 10 176 20 176 32C176 44 166 54 154 54C142 54 132 44 132 32C132 20 142 10 154 10Z" fill="#18A8C7"/>
+            <path d="M154 22C159.5 22 164 26.5 164 32C164 37.5 159.5 42 154 42C148.5 42 144 37.5 144 32C144 26.5 148.5 22 154 22Z" fill="white"/>
+            <path d="M137 49L74 158C70.5 164 64 168 57 168H26C16 168 10 157 15 148L84 29C89 20 102 20 107 29L116 45L92 86L82 69L50 124H61L123 16L137 49Z" fill="#09234B"/>
+            <path d="M178 58L250 148C257 157 250 168 239 168H211C205 168 199 165 196 160L154 99L133 134L109 94L145 34C150 26 162 26 168 34L178 58Z" fill="#09234B"/>
+      </g>
+      <text x="320" y="121" text-anchor="middle" fill="#09234B" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700" letter-spacing="1">Asronix</text>
+      <text x="320" y="158" text-anchor="middle" fill="#5D6674" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="600" letter-spacing="9">TECH AGENCY</text>
 </svg>
