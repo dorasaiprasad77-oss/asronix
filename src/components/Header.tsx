@@ -37,18 +37,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src="/logo.png"
+              src="/logo.svg"
               alt="ASRONIX TECH AGENCY"
-              className="w-10 h-10 rounded-xl object-cover transition-transform duration-300 group-hover:scale-110"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-lg font-bold font-[Poppins] text-[#0a0a1a] leading-tight">
-                ASRONIX
-              </h1>
-              <p className="text-[11px] text-gray-400 font-medium tracking-[2px] uppercase">
-                Tech Agency
-              </p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}

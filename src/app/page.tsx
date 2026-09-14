@@ -180,8 +180,7 @@ export default function HomePage() {
       <nav className="asronix-navbar">
         <div className="asronix-container asronix-nav-flex">
           <div className="asronix-logo">
-            <img src="/logo.png" alt="ASRONIX TECH AGENCY" className="asronix-logo-img" />
-            <span className="asronix-logo-text">ASRONIX TECH AGENCY</span>
+            <img src="/logo.svg" alt="ASRONIX TECH AGENCY" className="asronix-logo-img" />
           </div>
           <button className={`asronix-hamburger ${menuOpen ? 'asronix-hamburger-open' : ''}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -455,7 +454,7 @@ export default function HomePage() {
         <div className="asronix-container">
           <div className="asronix-contact-grid">
             <div className="asronix-contact-col">
-              <img src="/logo.png" alt="ASRONIX TECH AGENCY" className="asronix-footer-logo" />
+              <img src="/logo.svg" alt="ASRONIX TECH AGENCY" className="asronix-footer-logo" />
               <p><i className="fas fa-phone-alt"></i> +91 7377532141</p>
               <p><i className="fab fa-whatsapp"></i> WhatsApp: +91 7377532141</p>
               <p><i className="fas fa-envelope"></i> asronixtechagency@gmail.com</p>

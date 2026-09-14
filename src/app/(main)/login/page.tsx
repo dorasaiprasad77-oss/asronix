@@ -126,7 +126,7 @@ export default function LoginPage() {
                   border: "2px solid rgba(212,175,55,0.3)",
                 }}>
                 <img
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="ASRONIX TECH AGENCY"
                   className="w-14 h-14 object-contain"
                 />

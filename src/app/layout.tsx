@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   robots: "index, follow",
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo.svg',
+    apple: '/logo.svg',
   },
   manifest: '/manifest.json',
 };
@@ -30,7 +30,7 @@ const jsonLd = {
   "@type": "Organization",
   "name": "ASRONIX TECH AGENCY",
   "url": "https://asronixtechagency.com",
-  "logo": "https://asronixtechagency.com/logo.png",
+  "logo": "https://asronixtechagency.com/logo.svg",
   "description": "Building AI-Powered Digital Experiences For Modern Businesses",
   "slogan": "Ideas. Innovation. Impact.",
   "contactPoint": {
