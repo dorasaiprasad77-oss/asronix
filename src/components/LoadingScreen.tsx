@@ -117,7 +117,7 @@ export default function LoadingScreen({
                 }}
               >
                 <motion.img
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="ASRONIX TECH AGENCY"
                   className="w-16 h-16 object-contain"
                   animate={{
