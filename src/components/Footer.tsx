@@ -34,17 +34,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-lg">
-                A
-              </div>
-              <div>
-                <h3 className="text-lg font-bold font-[Poppins] text-white leading-tight">
-                  ASRONIX
-                </h3>
-                <p className="text-[10px] text-gray-500 font-medium tracking-[2px] uppercase">
-                  Tech Agency
-                </p>
-              </div>
+              <img
+                src="/logo.svg"
+                alt="ASRONIX TECH AGENCY"
+                className="h-12 w-auto"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Ideas. Innovation. Impact. We build AI-powered digital experiences that transform modern businesses.

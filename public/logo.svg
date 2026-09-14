@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380" width="300" height="380">
+  <!-- A Icon - Hollow/Outlined letter A -->
+  <path d="M 48,272 L 141,33 Q 150,22 159,33 L 252,272 L 222,272 L 171,105 L 129,105 L 78,272 Z" 
+        fill="#0B1D3A"/>
+  
+  <!-- Cyan dot at the top of the A -->
+  <circle cx="150" cy="18" r="11" fill="#29B6F6"/>
+  
+  <!-- "Asronix" text -->
+  <text x="150" y="320" 
+        text-anchor="middle" 
+        font-family="'Segoe UI', Arial, Helvetica, sans-serif" 
+        font-weight="700" 
+        font-size="54" 
+        fill="#0B1D3A" 
+        letter-spacing="-1">Asronix</text>
+  
+  <!-- "TECH AGENCY" subtitle -->
+  <text x="150" y="355" 
+        text-anchor="middle" 
+        font-family="'Segoe UI', Arial, Helvetica, sans-serif" 
+        font-weight="500" 
+        font-size="15" 
+        fill="#6B7280" 
+        letter-spacing="8">TECH AGENCY</text>
+</svg>
