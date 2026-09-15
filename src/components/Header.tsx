@@ -39,16 +39,8 @@ export default function Header() {
             <img
               src="/logo.svg"
               alt="ASRONIX TECH AGENCY"
-              className="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-lg font-bold font-[Poppins] text-[#0a0a1a] leading-tight">
-                ASRONIX
-              </h1>
-              <p className="text-[11px] text-gray-400 font-medium tracking-[2px] uppercase">
-                Tech Agency
-              </p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
